@@ -1,5 +1,7 @@
 # README
 
+Flix is a full-featured Rails 7 app built from idea to deployment. It is coursework for The Pragmatic Studio's excellent Ruby on Rails 7 course.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
