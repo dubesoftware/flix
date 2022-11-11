@@ -5,5 +5,11 @@
 	 <li>
 		 <strong><%= m.title %></strong> (<%= m.rating %>): <%= number_to_currency(m.total_gross, precision: 0) %>
 	 </li>
+	 <p>
+	   <%= m.description %>
+	 </p>
+	 <p>
+	   <%= m.released_on %>
+	 </p>
 <% end %>
 </ul>
