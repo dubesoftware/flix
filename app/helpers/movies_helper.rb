@@ -5,6 +5,6 @@ module MoviesHelper
   end
   
   def year_of(movie)
-    movie.released_on.year
+    movie.released_on.strftime("%Y")
   end
 end
