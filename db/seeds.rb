@@ -141,7 +141,7 @@ Movie.create!([
     title: "Aviation",
     description:
     %{
-      A film about the history of private aviation.
+      A documentary about the history of private aviation. This film explores the progression from piston single planes, all the way to multi-engine turbines and jets.
     }.squish,
     released_on: "2022-11-12",
     rating: "PG",
