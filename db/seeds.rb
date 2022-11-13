@@ -136,5 +136,15 @@ Movie.create!([
     released_on: "2017-06-02",
     rating: "PG-13",
     total_gross: 821_847_012
+  },
+  {
+    title: "Aviation",
+    description:
+    %{
+      A film about the history of private aviation.
+    }.squish,
+    released_on: "2022-11-12",
+    rating: "PG",
+    total_gross: 500_750_275
   }
 ])
