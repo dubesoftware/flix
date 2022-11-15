@@ -14,7 +14,5 @@ class MoviesController < ApplicationController
   
   def update
     @movie = Movie.find(params[:id])
-    
-    @movie.update(params[:id])
   end
 end
