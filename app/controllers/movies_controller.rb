@@ -13,6 +13,6 @@ class MoviesController < ApplicationController
   end
   
   def update
-    fail
+    @movie = Movie.find(params[:id])
   end
 end
