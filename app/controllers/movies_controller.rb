@@ -20,4 +20,8 @@ class MoviesController < ApplicationController
     @movie.update(movie_params)
     redirect_to @movie
   end
+  
+  def new
+    @movie = Movie.new
+  end
 end
