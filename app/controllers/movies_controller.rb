@@ -33,4 +33,11 @@ class MoviesController < ApplicationController
     @movie.save
     redirect_to @movie
   end
+  
+  private
+  
+  def movie_params
+    params.require(:movie).
+      permit(:title, :description, :rating, :released_on, :total_gross)
+  end
 end
