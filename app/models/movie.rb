@@ -12,6 +12,10 @@ class Movie < ApplicationRecord
     where("total_gross < 22500000").order(total_gross: :asc)
   end
   
+  def self.recently_added
+    order("created_at desc").limit(3)
+  end
+  
   def flop?
     total_gross.blank? || total_gross < 225_000_000
   end
