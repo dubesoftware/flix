@@ -8,6 +8,10 @@ class Movie < ApplicationRecord
     where("total_gross >= 300000000").order(total_gross: :desc)
   end
   
+  def self.flops
+    where("total_gross < 22500000").order(total_gross: :asc)
+  end
+  
   def flop?
     total_gross.blank? || total_gross < 225_000_000
   end
