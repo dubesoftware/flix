@@ -30,8 +30,11 @@ class MoviesController < ApplicationController
       params.require(:movie).
         permit(:title, :description, :rating, :released_on, :total_gross)
     @movie = Movie.new(movie_params)
-    @movie.save
-    redirect_to @movie
+    if @movie.save
+      redirect_to @movie
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
   
   def destroy
