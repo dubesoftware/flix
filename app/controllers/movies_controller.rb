@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to @movie, notice: "Movie successfuly created!"
+      redirect_to @movie, notice: "Movie successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
