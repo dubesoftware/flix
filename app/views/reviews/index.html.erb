@@ -6,6 +6,6 @@
 	<li>
 		<%= pluralize(review.stars, 'star') %> by <%= review.name %>:
 		<%= review.comment %>
-		... <%= time_ago_in_words(review.created_at) %> ago.
+		Commented <%= time_ago_in_words(review.created_at) %> ago.
 	</li>
 <% end %>
