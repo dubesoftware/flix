@@ -3,5 +3,8 @@
 </h1>
 
 <% @reviews.each do |review| %>
-	<li><%= pluralize(review.stars, 'star') %> by <%= review.name %>: <%= review.comment %></li>
+	<li>
+		<%= pluralize(review.stars, 'star') %> by <%= review.name %>:
+		<%= review.comment %>
+	</li>
 <% end %>
