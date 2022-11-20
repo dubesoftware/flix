@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   
   before_action :set_movie
-  before_action :set_review, only: [:edit, :destroy]
+  before_action :set_review, only: [:edit, :update, :destroy]
   
   def index
     @reviews = @movie.reviews
@@ -11,6 +11,11 @@ class ReviewsController < ApplicationController
   end
   
   def update
+    if @review.update(params[:review])
+      redirect_to movie_reviews_url(@movie), notice: "Review successfully updated!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
   
   def new
