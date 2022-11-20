@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   end
   
   resources :users
-  get "/signup" => "users#new"
 end
