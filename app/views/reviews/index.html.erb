@@ -15,6 +15,10 @@
       <p>
         <%= review.comment %>
       </p>
+	  <p>
+		<%= link_to "Delete", movie_review_path(review.movie, review), class: "button",
+			data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+	  </p>
     </li>
   <% end %>
 </ul>
