@@ -1,13 +1,13 @@
 class ReviewsController < ApplicationController
   
   before_action :set_movie
+  before_action :set_review, only: [:edit, :destroy]
   
   def index
-    @reviews = @movie.reviews.find(params[:id])
+    @reviews = @movie.reviews
   end
   
   def edit
-    @review = @movie.reviews.find(params[:id])
   end
   
   def new
@@ -37,5 +37,9 @@ class ReviewsController < ApplicationController
   
   def set_movie
     @movie = Movie.find(params[:movie_id])
+  end
+  
+  def set_review
+    @review = @movie.reviews.find(params[:id])
   end
 end
