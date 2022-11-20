@@ -10,9 +10,6 @@ class ReviewsController < ApplicationController
   def edit
   end
   
-  def update
-  end
-  
   def new
     @review = @movie.reviews.new
   end
