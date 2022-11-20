@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.new(review_params)
     if @review.save
-      redirect_to movie_reviews_url, notice: "Thanks for your review!"
+      redirect_to movie_reviews_url(@movie), notice: "Thanks for your review!"
     else
       render :new, status: :unprocessable_entity
     end
