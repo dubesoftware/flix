@@ -3,7 +3,11 @@ class ReviewsController < ApplicationController
   before_action :set_movie
   
   def index
-    @reviews = @movie.reviews
+    @reviews = @movie.reviews.find(params[:id])
+  end
+  
+  def edit
+    @review = @movie.reviews.find(params[:id])
   end
   
   def new
