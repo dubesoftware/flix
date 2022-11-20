@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   end
   
   def update
-    if @review.update(params[:review])
+    if @review.update(review_params)
       redirect_to movie_reviews_url(@movie), notice: "Review successfully updated!"
     else
       render :edit, status: :unprocessable_entity
