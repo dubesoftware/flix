@@ -19,6 +19,12 @@ class ReviewsController < ApplicationController
     end
   end
   
+  def destroy
+    @review = @movie.reviews.find(params[:id])
+    @review.destroy
+    redirect_to movie_reviews_url(@movie), status: :see_other, alert: "Movie successfully deleted!"
+  end
+  
   private
   
   def review_params
