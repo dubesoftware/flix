@@ -12,6 +12,12 @@ class ReviewsController < ApplicationController
   
   def create
     @movie = Movie.find(params[:movie_id])
-    @review = movie.reviews.new(params[:review])
+    @review = movie.reviews.new(review_params)
+  end
+  
+  private
+  
+  def review_params
+    params.require(:review).permit([:name, :stars, :comment])
   end
 end
