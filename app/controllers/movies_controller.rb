@@ -48,8 +48,4 @@ class MoviesController < ApplicationController
       permit(:title, :description, :rating, :released_on, :total_gross,
         :director, :duration, :email_file_name)
   end
-  
-  def set_movie
-    @movie = Movie.find(params[:id])
-  end
 end
