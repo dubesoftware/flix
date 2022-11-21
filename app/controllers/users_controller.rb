@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: "Account sucessfully updated!"
+      redirect_to @user, notice: "Account successfully updated!"
     else
       render :edit, status: :unprocessable_entity
     end
