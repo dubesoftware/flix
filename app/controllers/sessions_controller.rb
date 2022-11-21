@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
   
   def create
-    fail
   end
   
   def destroy
