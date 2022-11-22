@@ -53,4 +53,11 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+  
+  def require_correct_user
+    @user = User.find(params[:id])
+    unless current_user == @user
+      redirect_to root_url, status: :see_other
+    end
+  end
 end
