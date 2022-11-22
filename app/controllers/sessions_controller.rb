@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to(session[:intended_url] || user),
                   notice: "Welcome back, #{user.name}!"
+      session[:intended_url] = nil
     else
       flash[:alert] = "Invalid email/password combination!"
       render :new, status: :unprocessable_entity
