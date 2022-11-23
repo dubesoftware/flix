@@ -7,7 +7,7 @@
     <li>
       <%= render "shared/stars", percent: review.stars_as_percent %>
       <p>
-        <%= review.name %>
+        <%= review.user.name %>
         <span class="date">
           <%= time_ago_in_words(review.created_at) %> ago
         </span>
