@@ -17,7 +17,7 @@
 	            <%= time_ago_in_words(review.created_at) %> ago
 	          </span>
 	          <p>
-	            <%= review.comment %>
+	            <%= profile_image(review.user, 35) %> <%= review.comment %>
 	          </p>
 	        </div>
 	      </div>
