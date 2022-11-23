@@ -2,6 +2,10 @@
 	Reviews for <%= link_to @movie.title, @movie %>.
 </h1>
 
+<div class="reviews">
+	<%= link_to "Add Review", @movie %>
+</div>
+
 <ul class="reviews">
   <% @reviews.each do |review| %>
     <li>
