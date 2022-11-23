@@ -1,7 +1,7 @@
 class MakeReviewsAJoinTable < ActiveRecord::Migration[7.0]
   def change
-    remove_column :name, :string
-    add_column :user_id, :integer
+    remove_column :reviews, :name, :string
+    add_column :reviews, :user_id, :integer
     Review.delete_all
   end
 end
