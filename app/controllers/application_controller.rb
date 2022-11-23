@@ -28,12 +28,6 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user_admin?
   
-  def intended_url?
-    session[:intended_url] != nil
-  end
-  
-  helper_method :intended_url?
-  
   def require_admin
     unless current_user_admin?
       redirect_to movies_url, alert: "Unauthorised access!"
