@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
   def show
     @review_count = @movie.reviews.size
     @review = @movie.reviews.new
+    @fans = @movie.fans
   end
   
   def edit
