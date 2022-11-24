@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     set_user
     @reviews = @user.reviews
+    @favourite_movies = @user.favourite_movies
   end
   
   def new
