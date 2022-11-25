@@ -5,6 +5,9 @@
 	  <div class="faves">
 		<%= button_to "♥️ Fave", movie_favourites_path(@movie) %>
 	  </div>
+      <div class="count">
+        <%= @fans.size %>
+      </div>
 	<% end %>
   </div>
   <div class="details">
