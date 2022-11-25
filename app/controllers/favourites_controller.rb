@@ -7,4 +7,12 @@ class FavouritesController < ApplicationController
     @movie.fans << current_user
     redirect_to @movie
   end
+  
+  def destroy
+    favourite = current_user.favourites.find(id: params[:id])
+    favourite.destroy
+    
+    movie = Movie.find(params[:movie_id])
+    redirect_to movie
+  end
 end
