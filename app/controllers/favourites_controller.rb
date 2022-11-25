@@ -1,9 +1,9 @@
 class FavouritesController < ApplicationController
   
   before_action :require_signin
+  before_action :set_movie
   
   def create
-    set_movie
     @movie.fans << current_user
     redirect_to @movie
   end
@@ -12,7 +12,6 @@ class FavouritesController < ApplicationController
     favourite = current_user.favourites.find(params[:id])
     favourite.destroy
     
-    set_movie
     redirect_to @movie
   end
   
