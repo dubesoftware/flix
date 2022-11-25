@@ -9,7 +9,7 @@ class FavouritesController < ApplicationController
   end
   
   def destroy
-    favourite = current_user.favourites.find(id: params[:id])
+    favourite = current_user.favourites.find(params[:id])
     favourite.destroy
     
     movie = Movie.find(params[:movie_id])
