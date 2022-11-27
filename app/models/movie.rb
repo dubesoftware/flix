@@ -6,6 +6,8 @@ class Movie < ApplicationRecord
   has_many :favourites, dependent: :destroy
   has_many :fans, through: :favourites, source: :user
   
+  has_many :characterisations, dependent: :destroy
+  
   validates :title, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
