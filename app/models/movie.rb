@@ -7,6 +7,7 @@ class Movie < ApplicationRecord
   has_many :fans, through: :favourites, source: :user
   
   has_many :characterisations, dependent: :destroy
+  has_many :genres, through: :characterisations
   
   validates :title, :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
