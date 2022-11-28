@@ -19,9 +19,7 @@ class Movie < ApplicationRecord
   RATINGS = %w(G PG PG-13 R NC-17)
   validates :rating, inclusion: { in: RATINGS }
   
-  def self.released
-    where("released_on < ?", Time.now).order("released_on desc")
-  end
+  scope :released, -> { where("released_on < ?", Time.now).order("released_on desc") }
   
   def self.hits
     where("total_gross >= 300000000").order(total_gross: :desc)
