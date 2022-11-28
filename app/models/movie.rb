@@ -25,7 +25,9 @@ class Movie < ApplicationRecord
   
   scope :recent, ->(max = 5) { released.limit(max) }
   
-  scope :hits, -> { released.where("total_gross >= 300000000"),order(total_gross: :desc) }
+  def self.hits
+    where("total_gross >= 300000000").order(total_gross: :desc)
+  end
   
   scope :flops, -> { released.where("total_gross < 22500000").order(total_gross: :asc) }
   
