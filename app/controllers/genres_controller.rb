@@ -14,6 +14,12 @@ class GenresController < ApplicationController
   end
   
   def create
+    @genre = Genre.new(genre_params)
+    if @genre.save
+      redirect_to genres_url, notice: "New genre \"#{@genre.name}\" created!"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
   
   def edit
