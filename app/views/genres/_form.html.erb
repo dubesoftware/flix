@@ -5,5 +5,9 @@
   <%= f.label :name %>
   <%= f.text_field :name, autofocus: true %>
 
-  <%= f.submit %>
+  <% if genre.new_record? %>
+    <%= f.submit "Create Genre" %>
+  <% else %>
+    <%= f.submit "Update Genre" %>
+  <% end %>
 <% end %>
