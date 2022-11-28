@@ -29,4 +29,8 @@ class GenresController < ApplicationController
     params.require(:genre).
       permit(:name)
   end
+  
+  def set_genre
+    @genre = Genre.find(params[:id])
+  end
 end
