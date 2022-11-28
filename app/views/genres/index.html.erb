@@ -8,3 +8,8 @@
     </li>
   <% end %>
 </ul>
+<% if current_user_admin? %>
+  <section class="admin">
+	<%= link_to "Add New Genre", new_genre_path, class: "button" %>
+  </section>
+<% end %>
