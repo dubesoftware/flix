@@ -1,5 +1,7 @@
 class GenresController < ApplicationController
   
+  before_action :set_genre, only: [:edit, :update, :destroy]
+  
   def index
     @genres = Genre.all
   end
@@ -14,7 +16,6 @@ class GenresController < ApplicationController
   end
   
   def edit
-    @genre = Genre.find(params[:id])
   end
   
   def update
