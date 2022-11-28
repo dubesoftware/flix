@@ -3,4 +3,6 @@ class Genre < ApplicationRecord
   has_many :movies, through: :characterisations
   
   validates :name, presence: true, uniqueness: true
+  
+  scope :by_created_at_desc, -> { order(created_at: :desc) }
 end
