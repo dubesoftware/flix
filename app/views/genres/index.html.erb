@@ -1,0 +1,14 @@
+<h1>
+	All Genres
+</h1>
+
+<ul class="reviews">
+  <% @genres.each do |genre| %>
+    <li>
+      <%= genre.name %>
+	  <%= link_to "Edit", edit_genre_path(genre), class: "button" %>
+	  <%= link_to "Delete", genre_path(genre), class: "button",
+		  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+    </li>
+  <% end %>
+</ul>
