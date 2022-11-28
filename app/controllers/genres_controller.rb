@@ -19,6 +19,11 @@ class GenresController < ApplicationController
   end
   
   def update
+    if @genre.update(genre_params)
+      redirect_to genres_url, notice: "Genre successfully updated!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
   
   def destroy
