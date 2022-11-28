@@ -31,6 +31,8 @@ class Movie < ApplicationRecord
   
   scope :grossed_less_than, ->(amount) { released.where("total_gross < ?", amount) }
   
+  scope :grossed_greater_than, ->(amount) { released.where("total_gross > ?", amount) }
+  
   def self.recently_added
     order("created_at desc").limit(3)
   end
