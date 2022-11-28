@@ -1,10 +1,16 @@
 <ul class="reviews">
   <% @genres.each do |genre| %>
     <li>
-      <%= genre.name %>
-	  <%= link_to "Edit", edit_genre_path(genre), class: "button" %>
-	  <%= link_to "Delete", genre_path(genre), class: "button",
-		  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+	  <p>
+        <%= genre.name %>
+	  </p>
+	  <p>
+	    <% if current_user_admin? %>
+	      <%= link_to "Edit", edit_genre_path(genre), class: "button" %>
+	      <%= link_to "Delete", genre_path(genre), class: "button",
+		      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+	    <% end %>
+	  </p>
     </li>
   <% end %>
 </ul>
