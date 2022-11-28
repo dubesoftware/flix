@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   
-  before_action :set_genre, only: [:edit, :update, :destroy]
+  before_action :set_genre, only: [:edit, :show, :update, :destroy]
   before_action :require_admin, except: [:index, :show]
   
   def index
@@ -8,6 +8,7 @@ class GenresController < ApplicationController
   end
   
   def show
+    @movies = @genre.movies
   end
   
   def new
