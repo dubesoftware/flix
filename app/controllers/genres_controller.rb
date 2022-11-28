@@ -4,7 +4,7 @@ class GenresController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   
   def index
-    @genres = Genre.all
+    @genres = Genre.by_created_at_desc
   end
   
   def show
