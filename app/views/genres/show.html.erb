@@ -1,7 +1,11 @@
 <section class="movie-details">
     <div class="details">	  
 	  <% if @movies.present? %>
-        <h1>Movies for "<%= @genre.name %>" genre</h1>
+	  	<p>
+          <h1>
+		    Movies for "<%= @genre.name %>" genre
+		  </h1>
+	    </p>
 	    <% @movies.each do |movie| %>
 	      <section class="movie">
 	  	    <div class="image">
