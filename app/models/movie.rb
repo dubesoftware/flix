@@ -29,6 +29,8 @@ class Movie < ApplicationRecord
   
   scope :flops, -> { released.where("total_gross < 22500000").order(total_gross: :asc) }
   
+  scope :grossed_less_than, ->(amount) { released.where("total_gross < ?", amount) }
+  
   def self.recently_added
     order("created_at desc").limit(3)
   end
