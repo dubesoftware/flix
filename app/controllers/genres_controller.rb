@@ -27,6 +27,9 @@ class GenresController < ApplicationController
   end
   
   def destroy
+    @genre.destroy
+    redirect_to genres_url, status: :see_other,
+      alert: "Genre successfully deleted"
   end
   
   private
