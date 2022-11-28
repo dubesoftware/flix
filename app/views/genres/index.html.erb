@@ -2,7 +2,7 @@
   <% @genres.each do |genre| %>
     <li>
 	  <p>
-        <%= genre.name %>
+        <%= link_to genre.name, genre %>
 	  </p>
 	  <p>
 	    <% if current_user_admin? %>
