@@ -5,4 +5,10 @@ class Genre < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   
   scope :by_created_at_desc, -> { order(created_at: :desc) }
+  
+  private
+  
+  def set_slug
+    self.slug = name.parameterize
+  end
 end
