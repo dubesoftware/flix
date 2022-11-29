@@ -69,4 +69,12 @@ class MoviesController < ApplicationController
   def set_movie
     @movie = Movie.find(params[:id])
   end
+  
+  def movies_filter
+    if params[:filter].in? %w(upcoming recent, hits flops)
+      params[:filter]
+    else
+      :released
+    end
+  end
 end
