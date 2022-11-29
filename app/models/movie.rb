@@ -27,7 +27,7 @@ class Movie < ApplicationRecord
   
   scope :hits, -> { released.where("total_gross >= 300000000").order(total_gross: :desc) }
   
-  scope :flops, -> { released.where("total_gross < 22500000").order(total_gross: :asc) }
+  scope :flops, -> { released.where("total_gross < 225000000").order(total_gross: :asc) }
   
   scope :grossed_less_than, ->(amount) { released.where("total_gross < ?", amount) }
   
