@@ -1,4 +1,6 @@
 class Genre < ApplicationRecord
+  before_save :set_slug
+  
   has_many :characterisations, dependent: :destroy
   has_many :movies, through: :characterisations
   
