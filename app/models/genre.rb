@@ -8,10 +8,6 @@ class Genre < ApplicationRecord
   
   scope :by_created_at_desc, -> { order(created_at: :desc) }
   
-  def to_param
-    slug
-  end
-  
   private
   
   def set_slug
