@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def format_email_address
     self.email = email.downcase
   end
+  
+  def to_param
+    username
+  end
 end
