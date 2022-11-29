@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  before_save :set_slug
   
   has_many :reviews, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :critics, through: :reviews, source: :user
