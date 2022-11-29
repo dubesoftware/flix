@@ -1,5 +1,4 @@
-class ReviewsController < ApplicationController
-  
+class ReviewsController < ApplicationController  
   before_action :require_signin
   before_action :set_movie
   before_action :set_review, only: [:edit, :update, :destroy]
