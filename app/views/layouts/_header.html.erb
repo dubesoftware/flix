@@ -24,10 +24,10 @@
 	<ul class="right">
 	  <% if current_user %>
 	    <li>
-	      <%= link_to current_user.name, current_user %>
+	      <%= nav_link_to current_user.name, current_user %>
 		</li>
 	    <li>
-	      <%= link_to "Account Settings", edit_user_path(current_user) %>
+	      <%= nav_link_to "Account Settings", edit_user_path(current_user) %>
 	    </li>
 	    <li>
 	      <%= button_to "Sign Out", session_path, method: :delete %>
