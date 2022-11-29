@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :username, presence: true,
                        format: { with: /\A[A-Z0-9]+\z/i },
                        uniqueness: { case_sensitive: false }
-  before_save :format_username
+  before_save :format_username, :format_email_address
   
   scope :by_name, -> { order(:name) }
   
@@ -25,5 +25,9 @@ class User < ApplicationRecord
   
   def format_username
     self.username = username.downcase
+  end
+  
+  def format_email_address
+    self.email = email.downcase
   end
 end
