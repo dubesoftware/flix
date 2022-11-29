@@ -50,4 +50,10 @@ class Movie < ApplicationRecord
   def average_stars_as_percent
     (self.average_stars / 5.0) * 100
   end
+  
+  private
+  
+  def set_slug
+    self.slug = title.parameterize
+  end
 end
