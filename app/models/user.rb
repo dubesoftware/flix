@@ -26,8 +26,4 @@ class User < ApplicationRecord
   def format_username
     self.username = username.downcase
   end
-  
-  def format_email_address
-    self.email = email.downcase
-  end
 end
