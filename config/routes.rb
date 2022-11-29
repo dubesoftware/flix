@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create, :destroy]
   end
   
+  get "movies/filter/:filter" => "movies#index"
+  
   resource :session, only: [:new, :create, :destroy]
   
   resources :users
