@@ -14,6 +14,11 @@ group :development, :test do
   gem "sqlite3", "~> 1.4"
 end
 
+# Use postgresql in production environment
+group :production do
+  gem "pg"
+end
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
