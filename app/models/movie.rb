@@ -10,6 +10,8 @@ class Movie < ApplicationRecord
   has_many :characterisations, dependent: :destroy
   has_many :genres, through: :characterisations
   
+  has_one_attached :main_image
+  
   validates :title, presence: true, uniqueness: true
   validates :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
