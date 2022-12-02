@@ -62,8 +62,4 @@ class Movie < ApplicationRecord
   def set_slug
     self.slug = title.parameterize
   end
-  
-  def acceptable_image
-    errors.add(:main_image, "is too big")
-  end
 end
