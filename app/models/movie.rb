@@ -20,6 +20,8 @@ class Movie < ApplicationRecord
   RATINGS = %w(G PG PG-13 R NC-17)
   validates :rating, inclusion: { in: RATINGS }
   
+  validate :acceptable_image
+  
   scope :released, -> { where("released_on < ?", Time.now).order("released_on desc") }
   
   scope :upcoming, -> { where("released_on > ?", Time.now).order("released_on asc") }
